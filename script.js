@@ -9,7 +9,7 @@ function activeScroll() {
 			link = document.querySelector(`.navbar__link-item a[href='#${section.id}'`);
 		if (scrollY >= sectionTop && scrollY <= sectionHeight + sectionTop) {
 			link.classList.add("active");
-			indicator.style.left = `${index * 90 + 10}px`;
+			// indicator.style.left = `${index * 90 + 10}px`; it's up to you, you do not need to add this 
 		} else {
 			link.classList.remove("active");
 		}
