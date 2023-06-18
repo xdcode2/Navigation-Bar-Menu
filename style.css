@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+	--navbar-bg: #f7fbff;
+	--black-90: #151515;
+	--blue-40: #1b7be2;
+	--white-100: #fff;
+	--border-rounded: 100vmax;
+	--border-5: 5px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "poppins", sans-serif;
+	scroll-behavior: smooth;
+}
+
+.material-symbols-rounded {
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+body {
+	background-color: var(--blue-40);
+}
+
+/* =============== Navigation Bar =============== */
+
+.navbar {
+	position: fixed;
+	background-color: var(--navbar-bg);
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 65px;
+	border-radius: var(--border-5);
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+	zoom: 0.65;
+}
+
+.navbar__links-list {
+	list-style: none;
+	display: flex;
+	height: 100%;
+}
+
+.navbar__link-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90px;
+	height: 100%;
+}
+
+.navbar__link-item a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+	text-decoration: none;
+	text-transform: capitalize;
+	color: var(--black-90);
+	transition: all 0.2s ease;
+}
+
+.navbar__link-item a .icon {
+	font-size: 1.9rem;
+	transition: all 0.2s ease;
+}
+
+.navbar__link-item a p {
+	opacity: 0;
+	font-size: 13px;
+	letter-spacing: 1px;
+	transition: all 0.2s ease;
+}
+
+/* =============== Active class =============== */
+
+.navbar__link-item a.active {
+	transform: translateY(-8px);
+}
+
+.navbar__link-item a.active .icon {
+	color: var(--blue-40);
+	font-size: 1.7rem;
+}
+
+.navbar__link-item a.active p {
+	color: var(--white-100);
+	opacity: 1;
+}
+
+/* =============== Indicator =============== */
+
+.indicator {
+	width: 69px;
+	height: 20px;
+	background-color: var(--blue-40);
+	position: absolute;
+	bottom: -2.5px;
+	left: 10px;
+	transform: translateY(-50%);
+	border-radius: var(--border-rounded);
+	transition: all 0.2s ease;
+}
+
+/* =============== Sections =============== */
+
+section {
+	height: 100vh;
+}
+
+section h1 {
+	margin-top: 1rem;
+	text-align: center;
+	font-size: clamp(2rem, 6vw, 3rem);
+	color: var(--white-100);
+}
+
+/* =============== For large screen =============== */
+
+@media screen and (min-width: 300px) and (max-width: 396px) {
+	.navbar {
+		zoom: 0.8;
+	}
+}
+
+@media screen and (min-width: 396px) {
+	.navbar {
+		zoom: 1;
+	}
+}
